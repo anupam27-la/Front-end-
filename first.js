@@ -62,13 +62,11 @@ gsap.from("#about-us img,#about-us-in", {
 
 gsap.from(".card", {
   scale: 0.8,
-  // opacity:0,
   duration: 1,
   stagger: 0.1,
   scrollTrigger: {
     trigger: ".card",
     scroller: "body",
-    // markers:false,
     start: "top 70%",
     end: "top 65%",
     scrub: 1,
@@ -80,7 +78,6 @@ gsap.from("#colon1", {
   scrollTrigger: {
     trigger: "#colon1",
     scroller: "body",
-    // markers:true,
     start: "top 55%",
     end: "top 45%",
     scrub: 4,
@@ -92,7 +89,6 @@ gsap.from("#colon2", {
   scrollTrigger: {
     trigger: "#colon1",
     scroller: "body",
-    // markers:true,
     start: "top 55%",
     end: "top 45%",
     scrub: 4,
@@ -103,10 +99,22 @@ gsap.from("#page4 h1", {
   scrollTrigger: {
     trigger: "#page4 h1",
     scroller: "body",
-    // markers:true,
     start: "top 75%",
     end: "top 70%",
     scrub: 3,
   },
 });
 
+var h3all = document.querySelectorAll("#f2 h3");
+h3all.forEach(function (elem) {
+  elem.addEventListener("mouseenter", function () {
+    crsr.style.scale = 3;
+    crsr.style.border = "1px solid #fff";
+    crsr.style.backgroundColor = "transparent";
+  });
+  elem.addEventListener("mouseleave", function () {
+    crsr.style.scale = 1;
+    crsr.style.border = "0px solid #95C11E";
+    crsr.style.backgroundColor = "#95C11E";
+  });
+});
